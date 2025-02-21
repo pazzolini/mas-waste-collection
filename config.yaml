@@ -1,0 +1,58 @@
+grid:
+  size: 10
+
+locations:
+  depot:
+    position: [5, 5]
+  fuel_stations:
+    - position: [0, 0]
+    - position: [9, 9]
+
+agents:
+  counts:
+    trucks: 5
+    bins: 15
+  bin:
+    capacity: 100
+    threshold: 0.75
+    fill_rate:
+      min: 5
+      max: 10
+    monitor_period: 1
+    min_distance: 2
+  truck:
+    speed: 15
+    fuel:
+      capacity: 100
+      consumption: 0.50
+      threshold: 0.2
+    waste:
+      capacity: 1000
+      threshold: 0.8
+    malfunction:
+      probability: 0.01
+      duration:
+        min: 2
+        max: 6
+
+time:
+  real_seconds_per_hour: 2
+  rush_hours:
+    morning:
+      start: 7
+      end: 9
+      traffic_multiplier: 1.5
+    evening:
+      start: 17
+      end: 19
+      traffic_multiplier: 1.8
+
+traffic_events:
+  roadwork:
+    traffic_multiplier: 2.5
+  accident:
+    traffic_multiplier: 2
+
+random_events:
+  roadwork_probability: 0.01
+  accident_probability: 0.05
